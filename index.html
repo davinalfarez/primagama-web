@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Primagama Sunter Jaya</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="asset/iconweb.png">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="/asset/logo.png" alt="Logo" />
+    </div>
+    <nav class="nav-menu">
+      <a href="#" class="active">Beranda</a>
+      <a href="TentangKami.html">Tentang Kami</a>
+      <a href="HubungiKami.html">Hubungi Kami</a>
+    </nav>
+  </header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-left">
+    <h1><span class="purple">New</span> <span class="yellow">Primagama</span><br><span class="purple">Sunter Jaya</span></h1>
+
+    <div class="hero-card">
+      <h3>✨ Siap Cetak Prestasi, Raih Masa Depan Gemilang!</h3>
+      <p>
+        Bersama New Primagama Sunter Jaya, kami hadir untuk mendampingi setiap langkah belajar kamu —
+        dengan metode terbaik, tutor berpengalaman, dan program yang terbukti berhasil!<br><br>
+        📚 Yuk, gabung sekarang dan jadi bagian dari Generasi Cerdas Indonesia Emas!
+      </p>
+    </div>
+  </div>
+
+  <!-- Gambar & Tombol di kanan -->
+  <div class="hero-right">
+    <img src="/asset/student.png" alt="Siswa Primagama" class="student-img">
+    <a href="https://wa.me/6289504506674" target="_blank" class="btn-wa">Gabung Sekarang!</a>
+  </div>
+  </section>
+
+  <hr class="section-divider">
+
+<!-- Section Terbaru -->
+<section class="latest">
+  <div class="section-title">
+    <h2>Terbaru di <span class="yellow">New</span> <span class="purple">Primagama</span> Sunter Jaya</h2>
+  </div>
+
+  <!-- Kotak Background -->
+  <div class="latest-box">
+    <div class="carousel-wrapper">
+      <div class="carousel-track">
+        <div class="carousel-card"><img src="asset/image 29.png" alt="Poster 1"></div>
+        <div class="carousel-card"><img src="asset/image 28.png" alt="Poster 2"></div>
+        <div class="carousel-card"><img src="asset/image 29.png" alt="Poster 3"></div>
+        <div class="carousel-card"><img src="asset/image 28.png" alt="Poster 4"></div>
+        <div class="carousel-card"><img src="asset/image 29.png" alt="Poster 5"></div>
+        <div class="carousel-card"><img src="asset/image 28.png" alt="Poster 2"></div>
+        <div class="carousel-card"><img src="asset/image 29.png" alt="Poster 3"></div>
+        <div class="carousel-card"><img src="asset/image 28.png" alt="Poster 4"></div>
+        <div class="carousel-card"><img src="asset/image 29.png" alt="Poster 5"></div>
+      </div>
+    </div>
+
+    <!-- Dot navigation -->
+    <div class="carousel-dots">
+      <!-- JS akan mengisi dots + indikator -->
+      <span class="dot-indicator"></span>
+    </div>
+  </div>
+  
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== Permasalahan yang Sering Dihadapi Siswa ========== -->
+<section class="issues" id="issues">
+  <!-- judul/badge seperti section Carousel -->
+  <div class="issues-title">
+    <h2>Permasalahan yang Sering Dihadapi Siswa</h2>
+  </div>
+
+  <!-- bidang konten -->
+  <div class="issues-band">
+    <div class="issues-inner">
+      <div class="issues-grid">
+        <!-- kiri -->
+        <div class="issues-left">
+          <h3 class="issues-lead">
+            Sering kali siswa merasa kesulitan dikarenakan<br/>
+            beberapa hal, diantaranya
+          </h3>
+
+          <div class="issues-card">
+            <h4 class="issues-card-title">Tantangan Utama</h4>
+            <ul class="issues-list">
+              <li><i class="fa-solid fa-check"></i> Materi yang dibahas di sekolah sering kurang tuntas</li>
+              <li><i class="fa-solid fa-check"></i> Kurang memahami materi yang diajarkan di sekolah</li>
+              <li><i class="fa-solid fa-check"></i> Sering merasa kesulitan dalam pengerjaan Tugas dan PR</li>
+              <li><i class="fa-solid fa-check"></i> Belajar di rumah tidak ada yang membantu mengajari</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- kanan -->
+        <div class="issues-right">
+          <div class="issues-photo">
+            <img src="/asset/image 25.png" alt="Siswa belajar">
+          </div>
+        </div>
+      </div>
+
+      <!-- baris bawah -->
+      <div class="issues-footer">
+        <div class="issues-note">
+          Siswa sering kali tidak memiliki pendamping belajar yang dapat membantu
+          mengatasi kesulitan belajar yang dialami siswa.
+        </div>
+        <a class="issues-cta" target="_blank" href="https://wa.me/6289504506674">
+          Dapatkan Bantuan Sekarang!
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track");
+  const cards = document.querySelectorAll(".carousel-card");
+  const dotsContainer = document.querySelector(".carousel-dots");
+  let index = 0;
+  let startX = 0;
+  let isDragging = false;
+  let autoSlide;
+
+  // Generate dots sesuai jumlah card
+  cards.forEach((_, i) => {
+    const dot = document.createElement("button");
+    if (i === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => {
+      index = i;
+      updateCarousel();
+      resetAutoSlide();
+    });
+    dotsContainer.appendChild(dot);
+  });
+  const dots = dotsContainer.querySelectorAll("button");
+
+  function updateCarousel() {
+    const cardWidth = cards[0].offsetWidth + 40; // lebar card + gap
+    const offset = -(index * cardWidth) + (track.parentElement.offsetWidth/2 - cardWidth/2);
+    track.style.transform = `translateX(${offset}px)`;
+
+    // Highlight card aktif
+    cards.forEach((card, i) => {
+      card.classList.toggle("active", i === index);
+    });
+
+    // Update dots
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function nextSlide() {
+    index = (index + 1) % cards.length;
+    updateCarousel();
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlide, 3000);
+  }
+
+  // Start auto slide
+  resetAutoSlide();
+
+  // Drag / Swipe desktop
+  track.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startX = e.pageX;
+    clearInterval(autoSlide);
+  });
+
+  track.addEventListener("mouseup", (e) => {
+    if (!isDragging) return;
+    let endX = e.pageX;
+    if (startX - endX > 50) {
+      index = (index + 1) % cards.length;
+    } else if (endX - startX > 50) {
+      index = (index - 1 + cards.length) % cards.length;
+    }
+    updateCarousel();
+    resetAutoSlide();
+    isDragging = false;
+  });
+
+  // Drag / Swipe mobile
+  track.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    clearInterval(autoSlide);
+  });
+
+  track.addEventListener("touchend", (e) => {
+    if (!isDragging) return;
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) {
+      index = (index + 1) % cards.length;
+    } else if (endX - startX > 50) {
+      index = (index - 1 + cards.length) % cards.length;
+    }
+    updateCarousel();
+    resetAutoSlide();
+    isDragging = false;
+  });
+
+  updateCarousel();
+});
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const btnWa = document.querySelector(".btn-wa");
+  btnWa.addEventListener("click", () => {
+    console.log("Tombol WhatsApp diklik!");
+  });
+});
+
+  </script>
