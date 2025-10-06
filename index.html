@@ -727,41 +727,50 @@
   })();
 
   (function () {
-    const WA_NUMBER = "6289504506674"; // ganti kalau perlu (format internasional, tanpa +)
-
-    function normalizeDigits(s) { return (s || "").replace(/[^\d]/g, ""); }
+    const ENDPOINT = "https://script.google.com/macros/s/AKfycby6FVkz2SN-fWghN2L9uLMAALZhWDKfZwVqbyR0A21h0eG0X8sgkOPq8SkmNe7Xa3vrUQ/exec"; // URL Web App GAS
 
     const form   = document.getElementById("contactForm");
     const nama   = document.getElementById("cf-nama");
     const kontak = document.getElementById("cf-kontak");
     const pesan  = document.getElementById("cf-pesan");
 
-    form.addEventListener("submit", function (e) {
+    function disableForm(disabled) {
+      form.querySelectorAll("input,textarea,button").forEach(el => el.disabled = disabled);
+    }
+
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      // validasi sederhana
       if (!nama.value.trim() || !kontak.value.trim() || !pesan.value.trim()) {
         alert("Lengkapi nama, kontak, dan pesan terlebih dahulu ya.");
         return;
       }
 
-      const lines = [
-        "Halo Admin New Primagama Sunter Jaya 👋",
-        "",
-        `Nama: ${nama.value.trim()}`,
-        `Kontak: ${kontak.value.trim()}`,
-        "",
-        "Pesan:",
-        pesan.value.trim()
-      ];
+      disableForm(true);
 
-      const text = lines.join("\n");
-      const encoded = encodeURIComponent(text);
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            nama: nama.value.trim(),
+            kontak: kontak.value.trim(),
+            pesan: pesan.value.trim()
+          })
+        });
 
-      // URL WhatsApp (bekerja di mobile & desktop)
-      const waUrl = `https://wa.me/${normalizeDigits(WA_NUMBER)}?text=${encoded}`;
-
-      window.open(waUrl, "_blank"); // buka di tab baru
+        const data = await res.json().catch(() => ({}));
+        if (res.ok && data.ok) {
+          alert("Terima kasih! Pesanmu sudah terkirim ke email admin.");
+          form.reset();
+        } else {
+          alert("Maaf, terjadi kendala saat mengirim. Coba lagi ya.");
+        }
+      } catch (err) {
+        alert("Tidak bisa terhubung ke server. Periksa koneksi lalu coba lagi.");
+      } finally {
+        disableForm(false);
+      }
     });
   })();
 </script>
